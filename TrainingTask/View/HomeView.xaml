@@ -1,0 +1,22 @@
+﻿<Page x:Class="TrainingTask.View.HomeView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrainingTask.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="500"
+      Title="HomeView"
+      DataContext="{Binding Home, Source={StaticResource Locator}}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      >
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Users" FontSize="16" FontFamily="Roboto" Margin="20,10" Command="{Binding OpenUsersCommand}" />
+            <Button Content="Projects" FontSize="16" Margin="20,10" Command="{Binding OpenProjectsCommand}" />
+            <Button Content="Projects &amp; Users" FontSize="16" Margin="20,10" Command="{Binding OpenProjectsUsersCommand}" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,58 @@
+﻿<Page x:Class="TrainingTask.View.ProjectsUsersView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TrainingTask.View"
+        mc:Ignorable="d"
+        DataContext="{Binding ProjectsUsers, Source={StaticResource Locator}}"
+        Title="ProjectsUsersView" MinHeight="400" MinWidth="400"
+        >
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <ComboBox x:Name="comboBox"  DockPanel.Dock="Top" Margin="10,5"  MinWidth="150" 
+                      ItemsSource="{Binding UsersList}" SelectedItem="{Binding SelectedUser}" 
+                        materialDesign:HintAssist.Hint="Search"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged" >
+                        <!-- <i:InvokeCommandAction Command="{Binding SuitProjCommand}" CommandParameter="{Binding ElementName=comboBox, Path=SelectedItem}" /> -->
+                        <i:InvokeCommandAction Command="{Binding SuitProjCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+
+            <DockPanel  DockPanel.Dock="Bottom" LastChildFill="False">
+                <Button Content="Back" DockPanel.Dock="Left" FontSize="16" Margin="10,10" Command="{Binding BackWindowsCommand}" />
+                <Button Visibility="Collapsed" Content="Save" DockPanel.Dock="Right" FontSize="16" Margin="10" Command="{Binding SaveWindowsCommand}" />
+                <Button Content="Load" DockPanel.Dock="Right" FontSize="16" Margin="10" Command="{Binding LoadWindowsCommand}" />
+            </DockPanel>
+
+            <Border DockPanel.Dock="Top" Margin="10,5"  BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}" >
+                <StackPanel Orientation="Vertical" >
+                    <materialDesign:ColorZone Mode="PrimaryMid" Effect="{DynamicResource MaterialDesignShadowDepth1}">
+                        <TextBlock Margin="10" FontSize="14" > Projects for selected user:</TextBlock>
+                    </materialDesign:ColorZone>
+                    <ListBox Margin="0,5" ItemsSource="{Binding ProjectsSuitable}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </Border>
+
+
+
+
+        </DockPanel>
+    </Grid>
+</Page>

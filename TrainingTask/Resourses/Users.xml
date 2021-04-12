@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser>
+  <User>
+    <Name>Jonh</Name>
+    <Age>17</Age>
+    <Role>Editor</Role>
+  </User>
+  <User>
+    <Name>Johanna</Name>
+    <Age>21</Age>
+    <Role>Owner</Role>
+  </User>
+  <User>
+    <Name>Josh</Name>
+    <Age>37</Age>
+    <Role>Reader</Role>
+  </User>
+  <User>
+    <Name>Hanna</Name>
+    <Age>26</Age>
+    <Role>Guest</Role>
+  </User>
+</ArrayOfUser>

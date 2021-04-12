@@ -1,0 +1,39 @@
+﻿<Page x:Class="TrainingTask.View.SettingsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrainingTask.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="SettingsView"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      DataContext="{Binding Settings, Source={StaticResource Locator}}"
+      >
+
+    <DockPanel LastChildFill="False">
+        <materialDesign:ColorZone DockPanel.Dock="Top" Mode="PrimaryMid" Effect="{DynamicResource MaterialDesignShadowDepth1}">
+            <TextBlock Margin="5" FontSize="20" HorizontalAlignment="Center" >Settings</TextBlock>
+        </materialDesign:ColorZone>
+
+        <DockPanel  DockPanel.Dock="Bottom" LastChildFill="False">
+            <Button Content="Back" DockPanel.Dock="Left" FontSize="16" Margin="10" Command="{Binding BackWindowsCommand}"  />
+        </DockPanel>
+
+        <StackPanel DockPanel.Dock="Top" Margin="10">
+            <TextBox materialDesign:HintAssist.Hint="Path to resourses" Text="{Binding ResoursesPath}"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Top" Margin="10">
+            <TextBox materialDesign:HintAssist.Hint="Path to user file" Text="{Binding PathToUsers}"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Top" Margin="10">
+            <TextBox materialDesign:HintAssist.Hint="Path to projects file" Text="{Binding PathToProjects}"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </StackPanel>
+    </DockPanel>
+</Page>

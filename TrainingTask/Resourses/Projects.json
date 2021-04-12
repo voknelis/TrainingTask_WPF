@@ -1,0 +1,43 @@
+[
+    {
+        "Name": "Project 1",
+        "Type": 0,
+        "Visible": false,
+        "KnownProject": 0,
+        "PossibleRoles": [
+            0
+        ]
+    },
+    {
+        "Name": "Project 2",
+        "Type": 1,
+        "Visible": true,
+        "KnownProject": 0,
+        "PossibleRoles": [
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "Name": "Project 3",
+        "Type": 1,
+        "Visible": true,
+        "KnownProject": 0,
+        "PossibleRoles": [
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "Name": "Project 4",
+        "Type": 2,
+        "Visible": false,
+        "KnownProject": 1,
+        "PossibleRoles": [
+            0,
+            4
+        ]
+    }
+]
